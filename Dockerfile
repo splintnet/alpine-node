@@ -1,11 +1,11 @@
-FROM node:14.7-alpine
+FROM node:14.15-alpine
 LABEL maintainer="info@splintnet.de"
 
-# Install lib support
+# Install lib and node-gyp support
 RUN set -xe \
-    && apk add --no-cache \
-		bash \
-		curl
+    && apk --no-cache add --virtual native-deps \
+    g++ gcc libgcc libstdc++ linux-headers autoconf automake make nasm python git bash curl && \
+    npm install --quiet node-gyp -g
 
 RUN curl -sL https://sentry.io/get-cli/ | bash
 
