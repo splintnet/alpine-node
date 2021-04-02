@@ -1,4 +1,4 @@
-FROM node:14.15-alpine
+FROM node:15.13-alpine
 LABEL maintainer="info@splintnet.de"
 
 # Install lib and node-gyp support
