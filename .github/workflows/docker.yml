@@ -34,7 +34,7 @@ jobs:
           context: ./
           file: node19/Dockerfile
           push: true
-          tags: splintnet/alpine-node:latest,splintnet/alpine-php:node19,splintnet/alpine-php:19
+          tags: splintnet/alpine-node:latest,splintnet/alpine-node:node19,splintnet/alpine-node:19
 
       - name: Node 18
         uses: docker/build-push-action@v2
@@ -42,7 +42,7 @@ jobs:
           context: ./
           file: node18/Dockerfile
           push: true
-          tags: splintnet/alpine-php:node18,splintnet/alpine-php:18
+          tags: splintnet/alpine-node:node18,splintnet/alpine-node:18
 
       - name: Node 16
         uses: docker/build-push-action@v2
@@ -50,7 +50,7 @@ jobs:
           context: ./
           file: node16/Dockerfile
           push: true
-          tags: splintnet/alpine-php:node16,splintnet/alpine-php:16
+          tags: splintnet/alpine-node:node16,splintnet/alpine-node:16
 
       - name: Node 15
         uses: docker/build-push-action@v2
@@ -58,4 +58,4 @@ jobs:
           context: ./
           file: node15/Dockerfile
           push: true
-          tags: splintnet/alpine-node:node15,splintnet/alpine-php:15
+          tags: splintnet/alpine-node:node15,splintnet/alpine-node:15
