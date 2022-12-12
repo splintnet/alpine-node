@@ -7,7 +7,6 @@ on:
   schedule:
     - cron: '0 20 1 * *'
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
@@ -15,13 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
 
       - name: Login to DockerHub
         uses: docker/login-action@v2
@@ -36,8 +35,8 @@ jobs:
           file: node18/Dockerfile
           push: true
           tags: |
-            splintnet/alpine-node:latest,\
-            splintnet/alpine-php:node18,\
+            splintnet/alpine-node:latest,
+            splintnet/alpine-php:node18,
             splintnet/alpine-php:18
 
       - name: Node 16
@@ -47,7 +46,7 @@ jobs:
           file: node16/Dockerfile
           push: true
           tags: |
-            splintnet/alpine-php:node16,\
+            splintnet/alpine-php:node16,
             splintnet/alpine-php:16
 
       - name: Node 15
@@ -57,5 +56,5 @@ jobs:
           file: node15/Dockerfile
           push: true
           tags: |
-            splintnet/alpine-node:node15,\
+            splintnet/alpine-node:node15,
             splintnet/alpine-php:15
