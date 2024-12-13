@@ -32,6 +32,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./
+          platforms: linux/amd64,linux/arm64
           file: node22/Dockerfile
           push: true
           tags: splintnet/alpine-node:latest,splintnet/alpine-node:node22,splintnet/alpine-node:22
@@ -40,30 +41,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./
+          platforms: linux/amd64,linux/arm64
           file: node19/Dockerfile
           push: true
           tags: splintnet/alpine-node:node19,splintnet/alpine-node:19
-
-      - name: Node 18
-        uses: docker/build-push-action@v6
-        with:
-          context: ./
-          file: node18/Dockerfile
-          push: true
-          tags: splintnet/alpine-node:node18,splintnet/alpine-node:18
-
-      - name: Node 16
-        uses: docker/build-push-action@v6
-        with:
-          context: ./
-          file: node16/Dockerfile
-          push: true
-          tags: splintnet/alpine-node:node16,splintnet/alpine-node:16
-
-      - name: Node 15
-        uses: docker/build-push-action@v6
-        with:
-          context: ./
-          file: node15/Dockerfile
-          push: true
-          tags: splintnet/alpine-node:node15,splintnet/alpine-node:15
