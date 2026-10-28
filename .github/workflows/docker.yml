@@ -28,6 +28,24 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Node 26
+        uses: docker/build-push-action@v6
+        with:
+          context: ./
+          platforms: linux/amd64,linux/arm64
+          file: node26/Dockerfile
+          push: true
+          tags: splintnet/alpine-node:node26,splintnet/alpine-node:26
+
+      - name: Node 24
+        uses: docker/build-push-action@v6
+        with:
+          context: ./
+          platforms: linux/amd64,linux/arm64
+          file: node24/Dockerfile
+          push: true
+          tags: splintnet/alpine-node:node24,splintnet/alpine-node:24
+
       - name: Node 22
         uses: docker/build-push-action@v6
         with:
